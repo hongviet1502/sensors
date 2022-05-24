@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CO2 Sensor</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <% if ( data.length !=0) { %>
+        <div class="sensor">
+            <div class="sensor__header">
+                <div class="sensor__title">Cảm biến khí CO2
+                    <span>
+                        <%= data[0].Sensor[0].ID %>
+                    </span>
+                </div>
+                <div class="sensor__battery">
+                    <span class="sensor__battery--icon">
+                        <i class="fa-solid fa-battery-three-quarters"></i>
+                    </span>
+                    <div class="sensor__battery--value">
+                        <%= data[0].Sensor[0].Battery %>
+                    </div>
+                </div>
+            </div>
+            <div class="sensor__body">
+                <div class="sensor__body--first">
+                    <div class="sensor_icon">
+                        <img src="/image/co2.png" alt="" width="" height="100%">
+                    </div>
+                    <div class="sensor__content">
+                        <div class="sensor__status">
+                            <span>Trạng thái </span>
+                            <div class="sensor__status--title">Đang hoạt động</div>
+                        </div>
+                        <div class="sensor__value">
+                            <span>Giá trị đo </span>
+                            <div class="sensor__value--title">
+                                <%= data[0].Sensor[0].Value %> ppm
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sensor__update">
+                    <div class="sensor__time-update">Thời gian cập nhật:
+                        <span id="sensor__time--update">1 phút/ lần</span>
+                    </div>
+                    <div class="sensor__latest-update">Cập nhật gần nhất: 10:33:51 , 04/05/2022</div>
+                </div>
+            </div>
+        </div>
+        <% } else { %>
+            <h2>Chưa có dữ liệu</h2>
+            <% } %>
+
+
+
+                <script src="index.js"></script>
+                <script>
+                    //Clicked sensor card
+                    const sensorElement = document.querySelector(".sensor")
+                    sensorElement.onclick = function () {
+                        sensorElement.classList.toggle("sensor--clicked")
+                    }
+                    console.log(sensorElement)
+                </script>
+
+</body>
+
+</html>

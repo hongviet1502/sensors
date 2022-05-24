@@ -1,0 +1,134 @@
+/* Reset CSS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ccc;
+}
+
+/* Sensor Card */
+
+.sensor {
+    /* background-image: linear-gradient(); */
+    width: 390px;
+    /* min-height: 300px; */
+    min-height: 240px;
+    border: 1px solid lightblue;
+    border-radius: 4px;
+    background-color: #fff;
+    margin-left: 24px;
+    padding-left: 24px;
+    padding-right: 24px;
+    cursor: pointer;
+}
+
+.sensor.sensor--clicked {
+    background-color: rgb(146, 222, 222);
+}
+
+.sensor__header {
+    height: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sensor__title {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.sensor__battery {
+    display: flex;
+    align-items: center;
+    margin-right: 14px;
+}
+
+.sensor__battery--icon {
+    font-size: 20px;
+    color: #28a745;
+}
+
+.sensor__battery--value {
+    font-size: 16px;
+    color: rgb(14, 186, 25);
+    font-weight: 400;
+    margin-left: 4px;
+}
+
+.sensor__body {
+    /* width: 100%; */
+    display: flex;
+    flex-direction: column;
+}
+
+.sensor__body--first {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sensor__content {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    flex-direction: column;
+    flex: 1;
+    margin-left: 8px;
+}
+
+
+.sensor_icon {
+    /* flex: 1 */
+    height: 120px;
+    min-width: 120px;
+    text-align: center;
+    line-height: 120px;
+}
+
+.sensor__status {
+    display: flex;
+}
+
+.sensor__status span {
+    min-width: 80px;
+    font-size: 16px;
+    font-weight: 300;
+
+}
+
+.sensor__status--title {
+    flex: 1;
+    color: #28a745;
+
+}
+
+.sensor__value {
+    display: flex;
+}
+
+.sensor__value span {
+    min-width: 80px;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.sensor__value--title {
+    flex: 1;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.sensor__time-update {
+    /* text-align: center; */
+    color: #28a745;
+    font-style: italic;
+}
+
+.sensor__latest-update {
+    color: #dc3545;
+}
